@@ -4,6 +4,7 @@ public abstract class GameChar {
     private int damage;
     private int health;
     private int money;
+    private String winingAward = "" ;
 
     public GameChar(int id, String name, int damage, int health, int money) {
         this.id = id;
@@ -51,5 +52,13 @@ public abstract class GameChar {
 
     public void setMoney(int money) {
         this.money = money;
+    }
+
+    public String getWiningAward() {
+        return winingAward;
+    }
+
+    public void setWiningAward(String winingAward) {
+        this.winingAward = winingAward;
     }
 }

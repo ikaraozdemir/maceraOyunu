@@ -1,11 +1,13 @@
+import java.util.Scanner;
+
 public class Weapon {
-    private int id;
+    public static int id;
     private String name;
     private int damage;
     private int price;
 
     public Weapon(int id, String name, int damage, int price) {
-        this.id = id;
+        Weapon.id = id;
         this.name = name;
         this.damage = damage;
         this.price = price;
@@ -33,7 +35,7 @@ public class Weapon {
     }
 
     public void setId(int id) {
-        this.id = id;
+        Weapon.id = id;
     }
 
     public String getName() {

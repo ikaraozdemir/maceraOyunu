@@ -7,9 +7,10 @@ public class Player {
     private int money;
     private String name;
     private String charName;
+//    private String winingAward ;
     private Scanner input = new Scanner (System.in);
     private Inventory inventory;
-
+    private String[] collBigAwards;
 
     public Player(String name) {
         this.name = name;
@@ -27,7 +28,7 @@ public class Player {
                     "\tKarakter: " + gameChar.getName()  +
                     "\tHasar: " + gameChar.getDamage() +
                     "\tSağlık: " + gameChar.getHealth() +
-                    "\tPara " + gameChar.getMoney());
+                    "\tPara " + gameChar.getMoney()  );
         }
         System.out.println("--------------------------");
         System.out.print("Lütfen bir karakter seçiniz: ");
@@ -58,16 +59,22 @@ public class Player {
         this.setHealth(gameChar.getHealth());
         this.setInitHealth(gameChar.getHealth());
         this.setMoney(gameChar.getMoney());
+//        this.setWiningAward(gameChar.getWiningAward());
     }
 
     public void printInfo(){
-        System.out.println("Karakter: " + this.getCharName() +
+        System.out.print("Karakter: " + this.getCharName() +
                 "\tSilahınız: " + this.getInventory().getWeapon().getName() +
                 "\tZırhınız: " + this.getInventory().getArmor().getName() +
                 "\tBloklama: " + this.getInventory().getArmor().getBlock() +
                 "\tHasar: " + this.getTotalDamage() +
                 "\tSağlık: " + this.getHealth() +
-                "\tPara: " + this.getMoney());
+                "\tPara: " + this.getMoney() + " "
+                );
+        System.out.print("Topladığınız Ödüller: ");
+        for (int i = 0 ; i<BattleLoc.bigAwardsList.length; i++){
+            System.out.print(BattleLoc.bigAwardsList[i].toString() + " ");
+        }
     }
 
     public int getTotalDamage () {
@@ -131,5 +138,13 @@ public class Player {
 
     public void setInitHealth(int initHealth) {
         this.initHealth = initHealth;
+    }
+
+    public String[] getCollBigAwards() {
+        return collBigAwards;
+    }
+
+    public void setCollBigAwards(String[] collBigAwards) {
+        this.collBigAwards = collBigAwards;
     }
 }

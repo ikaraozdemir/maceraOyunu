@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Monster {
     private int id;
     private String name;
@@ -5,14 +7,17 @@ public class Monster {
     private int health;
     private int award;
     private int initHealth;
+    private String winingAward ;
 
-    public Monster(int id, String name, int damage, int health, int award) {
+
+    public Monster(int id, String name, int damage, int health, int award, String winingAward ) {
         this.id = id;
         this.name = name;
         this.damage = damage;
         this.health = health;
         this.initHealth = health;
         this.award = award;
+        this.winingAward = winingAward;
     }
 
     public int getId() {
@@ -67,4 +72,11 @@ public class Monster {
         this.initHealth = initHealth;
     }
 
+    public String getWiningAward() {
+        return winingAward;
+    }
+
+    public void setWiningAward(String winingAward) {
+        this.winingAward = winingAward;
+    }
 }
